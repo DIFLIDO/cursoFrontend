@@ -1,25 +1,183 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
-:root{
+:root{ /* declaracion de variables*/
+    /*variables para los colores a utilizar*/
     --white: #FFFFFF;
     --black: #000000;
     --very-light-pink: #C7C7C7;
     --text-input-field:#F7F7F7;
     --hospital-green: #ACD9B2;
+    /* Variables para tamaño de letras*/
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
 }
 body{
-    margin: 0;
+    margin: 0;/*quita el margen*/
+    font-family: 'Quicksand', sans-serif; /*tipo de letra*/
 }
 .login{
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    place-items: center;
+    width: 100%;  /* ancho de la pantanlla*/
+    height: 100vh; /* alto de la pantanlla*/
+    display: grid; /* para central los elementos*/
+    place-items: center; /* para central los elementos vertical y horizontal*/
 }
 .form-container{
-    display: grid;
-    grid-template: auto 1fr auto;
-    width: 300px;
+    display: grid; /* organizar las filas*/
+    grid-template: auto 1fr auto; /* organizar las filas*/
+    width: 300px; /* le damos el ancho*/
+   
 }
 .logo{
+    width: 150px; /* tamaño del logo*/
+    margin-bottom: 48px; /*agregar un margen*/
+    justify-self: center; /* central la imagen*/
+    display: none; /*no deja ver el logo*/
+}
+.title{
+    font-size: var(--lg); /*tamaño de letra utilizando variables*/
+    margin-bottom: 12px;
+    text-align: center;
+}
+.subtitle{
+    color: var(--very-light-pink);
+    font-size: var(--md); /*tamaño de la letra*/
+    font-weight: 300; /*especidad a la letra*/
+    margin-top: 0;
+    margin-bottom: 32px;
+    text-align: center;
+}
+.form{ 
+    display: flex;
+    flex-direction: column; /* se coloca los input y label debajo del otro*/
+}
+.label{
+    font-size: var(--sm);
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.input{
+    background-color: var(--text-input-field); 
+    border: none; /* quita el borde*/
+    border-radius: 8px; /*redondea los bordes*/
+    height: 30px;
+    font-size: var(--md);
+    padding: 6px;
+}
+.primary-button{
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);    
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+}
+.secondary-button{
+    background-color: var(--white);
+    border-radius: 8px;
+    border: 1px solid var(--hospital-green);
+    color: var(--hospital-green);        
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+}
+.login-button{
+    margin-top: 14px;
+    margin-bottom: 30px;
+}
+
+
+/********************Email enviado*******************/
+
+.form-container-email{
+    display: grid; /* organizar las filas*/
+    grid-template: auto 1fr auto; /* organizar las filas*/
+    width: 300px; /* le damos el ancho*/
+    justify-items: center; /* centramos la imagen y la bolita*/
+}
+.email-image{
+    width: 132px; /* ancho de la bolita*/
+    height: 132px; /* alto de la bolita*/
+    border-radius: 50%; /* redonderar*/
+    background-color: var(--text-input-field); /*color de fondo de la bolita*/
+    display: flex; /*centra la imagen en la bolita*/
+    justify-content: center; /*centra la imagen en la bolita*/
+    align-items: center; /*centra la imagen en la bolita*/
+    margin-bottom: 24px; 
+}
+.email-image img{
+    width: 80px;
+}
+.resend{
+    font-size: var(--md);
+}
+.resend span{
+    color: var(--very-light-pink);
+}
+.resend a{
+    color: var(--hospital-green);
+    text-decoration: none;
+}
+/******************************** LOGIN ***********************/
+.form a{
+    color: var(--hospital-green);
+    font-size: var(--sm);
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 52px;      
+}
+.input-email{
+    margin-bottom: 22px;
+}
+/*********************** CREAR CUENTA ************************/
+.title-crear-cuenta{
+    text-align: left;
+    margin-bottom: 35px;
+}
+.input-name-crearC,
+.input-password-crearC,
+.input-email-crearC{
+    margin-bottom: 22px;
+}
+.form div{  /*colocamos los label e input uno debajo del otro*/
+    display: flex;
+    flex-direction: column;
+}
+
+/*********************** Editar  CUENTA ************************/
+.editarC-button{
+    margin-top: 14px;
+    margin-bottom: 50px;
+}
+.value{
+    color: var(--very-light-pink);
+    font-size: var(--md);
+    margin: 8px 0 32px 0;
+}
+
+
+
+
+
+
+
+@media (max-width:640px){
+    .logo{
+        display: block;
+    }
+    .secondary-button{
+        margin-top: 100px;
+    }
+    .form-container-crearC{
+        height: 100%;
+    }
+    .form-crearC{
+        height: 100%;   
+        justify-content: space-between; /* para separar el contenido*/
+    }
     
 }
