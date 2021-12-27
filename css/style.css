@@ -158,20 +158,288 @@ body{
     font-size: var(--md);
     margin: 8px 0 32px 0;
 }
+/********************************* INICIO ********************/
+.cards-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px); /*crea columnas automaticamente dependiendo el tamamño de la pantalla*/
+    gap: 26px; /*agrega espacios */
+    place-content: center; /*alinea toda nuestra GRID en el centro*/
+}
+.product-card{
+    width: 240px;
+}
+.product-card img {
+    width: 240px;
+    height: 240px;
+    border-radius: 20px;
+    object-fit: cover; /*Conserva la imagen original no modifica el tamaño*/
+}
+.product-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+.product-info figure img{
+    width: 35px;
+    height: 35px;   
+}
+.product-info figure{
+   margin: 0;  
+}
+.product-info div p:nth-child(1){
+    font-weight: bold;
+    font-size: var(--md);
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+.product-info div p:nth-child(2){
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--very-light-pink);  
+}
 
+/******************************** MENU DESKTOP ***********************************/
+.desktop-menu{
+    width: 100px;
+    height: auto;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
+    padding: 20px 20px 0 20px;
+}
+.desktop-menu ul{
+    list-style: none; /*quita los puntos del los ul*/
+    padding: 0;
+    margin: 0;  
+}
+.desktop-menu ul li{
+    text-align: end; /*alinea los elementos a la derecha*/
+}
+.desktop-menu ul li:nth-child(1),/*aplica solo al primer  elemento*/
+.desktop-menu ul li:nth-child(2){ /*aplica solo al segundo elemento*/
+    font-weight: bold;
+}
 
+.desktop-menu ul li:last-child{ /*aplica solo al ultimo elemento*/
+    padding-top: 20px;
+    border-top: 1px solid var(--very-light-pink);
+}
+.desktop-menu ul li:last-child a{ /*aplica solo al ultimo elemento*/
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+.desktop-menu ul li a {
+    color: var(--black);
+    text-decoration: none;
+    margin-bottom: 20px; /* darle margen*/
+    display: inline-block; /*para que pueda tomar el margen a los elementos en linea */
+    
+}
+/************************ MENU MOBILE*************************************/
+.mobile-menu{
+    padding: 24px;
+}
+.mobile-menu a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    /*margin-bottom: 24px;*/
+}
+.mobile-menu ul{
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none; 
+}
+.mobile-menu ul:nth-child(1){
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.mobile-menu ul li{
+   margin-bottom: 24px; 
+}
+.email-Mmobile{
+    font-size: var(--sm);
+    font-weight: 300 !important;
+}
+.sign-out-mobile{
+    font-size: var(--sm);
+    color: var(--hospital-green) !important;
+}
+.mobile-menu ul:last-child{ /*para poner el ultimo ul (email y sign out) al final */
+    position: absolute;
+    bottom: 0;
+}
+/**************************    MY ORDER  *******************************/
+.my-order{
+    width: 100%; /*todo el ancho de la pantalla*/
+    height: 100vh; /*todo el alto de la pantalla*/
+    display: grid; /*para central todos los elementos*/
+    place-items: center; /*para central todos los elementos*/
+}
+.title-my-order{
+    font-size: var(--lg);
+    margin-bottom: 40px;
+}
+.my-order-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    width: 300px;
+}
+.my-order-content{
+    display: flex;
+    flex-direction: column;
+}
+.order{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
+    background-color: var(--text-input-field);
+    margin-bottom: 24px;
+    border-radius: 8px;
+    padding: 0 24px;
+}
+.order p:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.order p span:nth-child(1){
+    font-size: var(--md);
+    font-weight: bold;
+}
+.order p span:nth-child(2){
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+}
+.order p:nth-child(2){
+   text-align: end; /*para alinar el contenido a la derecha*/
+   font-weight: bold;
+    }
+.shopping-cart figure img{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    object-fit: cover; /*para que la imagen se vea bien*/
+}
+.shopping-cart p:nth-child(2){
+    color: var(--very-light-pink);
+}
+.shopping-cart p:nth-child(3){
+    font-size: var(--md);
+    font-weight: bold;
+}
+.shopping-cart{ /* para poner la imagen, nombre y precio uno del lado al otro*/
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px; /*darle espacio*/
+    margin-bottom: 24px;
+    align-items: center;
+}
+.shopping-cart figure {
+    margin: 0;
+}
+/********************   MY ORDERS (MIS ORDENES)   ***************************/
+.orders{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 8px;    
+}
+.orders p:nth-child(1){
+    display: flex;
+    flex-direction: column;
+}
+.orders p span:nth-child(1){
+    font-size: var(--md);
+    font-weight: bold;
+}
+.orders p span:nth-child(2){
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+}
+.orders p:nth-child(2){
+   text-align: end; /*para alinar el contenido a la derecha*/
+   font-weight: bold;
+}
+/********************  NAVBAR   ****************************/
+.menu{
+    display: none; /* desaparece el icono del menu*/
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--very-light-pinkb );
+}
+.logo-navbar{
+    width: 100px;
+}
+.navbar-left{
+    display: flex;
+}
+.navbar-left ul{   
+    margin-left: 12px;
+}
 
+.navbar-left ul li a,
+.navbar-right ul li a{
+    text-decoration: none;
+    color: var(--very-light-pink);
+    border: 1px solid var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover{   
+    color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
+}
+.navbar-left ul,
+.navbar-right ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.navbar-email{
+    color: var(--very-light-pink);
+    font-size: var(--sm);
+    margin-right: 12px;
+}
+.navbar-shopping-cart{ /* para que el numero se adhiera al carrito*/
+    position: relative;
+}
+.navbar-shopping-cart div{ /* para que el numero este encima del carrito*/
+    width: 16px;
+    height: 16px;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-size: var(--sm);
+    font-weight: bold;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+/*************************************************************/
+/*                       MOBILE                              */
+/*************************************************************/
 
-
-
-@media (max-width:640px){
+@media (max-width:640px){ 
     .logo{
-        display: block;
+        display: block; /*mostrar logo contraseña*/
     }
     .secondary-button{
         margin-top: 100px;
     }
+    
     .form-container-crearC{
         height: 100%;
     }
@@ -179,5 +447,29 @@ body{
         height: 100%;   
         justify-content: space-between; /* para separar el contenido*/
     }
-    
+    /*** cambios al inicio para que la  GALERIA DE imagen se ponga mas pequella en la cards***/
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 140px); /*crea columnas automaticamente dependiendo el tamamño de la pantalla*/
+        gap: 26px; /*agrega espacios */
+    }
+    .product-card{
+        width: 140px;
+    }
+    .product-card img {
+        width: 140px;
+        height: 140px;
+    }
+    /***********   NAVBAR    ************/
+    /********** PARA OCULTARLO ********/
+
+    .menu{
+        display: block; /* para que aparezca el icono de menu*/
+    }
+    .navbar-left ul{
+        display: none;
+    }
+    .navbar-email{
+        display: none;
+    }
 }
